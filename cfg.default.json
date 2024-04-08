@@ -1,0 +1,5 @@
+{
+  "rpc": "http://127.0.0.1:8545",
+  "contracts": "YOU_PATH_ethos/solidity/artifacts/contracts",
+  "stakingAddress": "0x0000000000000000000000000000000000001003"
+}
