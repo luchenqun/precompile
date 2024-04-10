@@ -23,7 +23,7 @@ export const main = async () => {
 
   const staking = new ethers.Contract(stakingAddress, abi, provider);
   const res = await staking.validatorUnbondingDelegations(validatorAddr, pageRequest);
-  console.log('validatorUnbondingDelegations', res.toObject(), JSON.stringify(res.toObject(), undefined, 2));
+  console.log('validatorUnbondingDelegations', JSON.stringify(res.toObject(), undefined, 2));
 };
 
 main();

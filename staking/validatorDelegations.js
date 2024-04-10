@@ -12,7 +12,7 @@ export const main = async () => {
   const provider = new ethers.JsonRpcProvider(rpc);
 
   // input params
-  const validatorAddr = '0xbf657d0ef7b48167657a703ed8fd063f075246d7';
+  const delegatorAddr = '0xbf657d0ef7b48167657a703ed8fd063f075246d7';
   const pageRequest = {
     key: '0x00',
     offset: 0,
@@ -22,8 +22,8 @@ export const main = async () => {
   };
 
   const staking = new ethers.Contract(stakingAddress, abi, provider);
-  const res = await staking.validatorDelegations(validatorAddr, pageRequest);
-  console.log('validatorDelegations', res.toObject(), JSON.stringify(res.toObject(), undefined, 2));
+  const res = await staking.delegatorDelegations(delegatorAddr, pageRequest);
+  console.log('delegatorDelegations', JSON.stringify(res.toObject(), undefined, 2));
 };
 
 main();
