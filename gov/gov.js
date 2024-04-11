@@ -14,12 +14,16 @@ export const main = async () => {
   let res;
   const gov = new ethers.Contract(govAddress, abi, provider);
 
-  const proposalId = '1';
+  // for (const fragment of gov.interface.fragments) {
+  //   console.log(fragment.name, fragment.type, fragment.stateMutability, fragment.selector);
+  // }
+
+  const proposalId = '3';
   res = await gov.proposal(proposalId);
   console.log('proposal', JSON.stringify(res.toObject(), undefined, 2));
 
   const status = 0;
-  const voter = '0x0000000000000000000000000000000000000000';
+  let voter = '0x0000000000000000000000000000000000000000';
   const depositor = '0x0000000000000000000000000000000000000000';
   const pageRequest = {
     key: '0x00',
@@ -31,6 +35,19 @@ export const main = async () => {
 
   res = await gov.proposals(status, voter, depositor, pageRequest);
   console.log('proposals', JSON.stringify(res.toObject(), undefined, 2));
+
+  voter = '0xbf657D0ef7b48167657A703Ed8Fd063F075246D7';
+  res = await gov.vote(proposalId, voter);
+  console.log('vote', JSON.stringify(res.toObject(), undefined, 2));
+
+  res = await gov.votes(proposalId, pageRequest);
+  console.log('votes', JSON.stringify(res.toObject(), undefined, 2));
+
+  res = await gov.depositQuery(proposalId, voter);
+  console.log('deposit', JSON.stringify(res.toObject(), undefined, 2));
+
+  res = await gov.deposits(proposalId, pageRequest);
+  console.log('deposits', JSON.stringify(res.toObject(), undefined, 2));
 
   res = await gov.tallyResult(proposalId);
   console.log('tallyResult', JSON.stringify(res.toObject(), undefined, 2));
