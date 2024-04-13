@@ -12,7 +12,7 @@ export const main = async () => {
   const provider = new ethers.JsonRpcProvider(rpc);
 
   // input params
-  const delegatorAddr = '0xbf657d0ef7b48167657a703ed8fd063f075246d7';
+  const delegatorAddr = '0x00000Be6819f41400225702D32d3dd23663Dd690';
   const pageRequest = {
     key: '0x00',
     offset: 0,

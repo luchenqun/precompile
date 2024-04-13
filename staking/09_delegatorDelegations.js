@@ -23,7 +23,7 @@ export const main = async () => {
 
   const staking = new ethers.Contract(stakingAddress, abi, provider);
   const res = await staking.delegatorDelegations(delegatorAddr, pageRequest);
-  console.log('delegatorDelegations', res.toObject(), JSON.stringify(res.toObject(), undefined, 2));
+  console.log('delegatorDelegations', JSON.stringify(res.toObject(), undefined, 2));
 };
 
 main();

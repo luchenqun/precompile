@@ -17,20 +17,8 @@ export const main = async () => {
   let res;
   const distribution = new ethers.Contract(distributionAddress, abi, provider);
 
-  res = await distribution.validatorDistributionInfo(validatorAddress);
-  console.log('validatorDistributionInfo', JSON.stringify(res.toObject(), undefined, 2));
-
-  res = await distribution.validatorOutstandingRewards(validatorAddress);
-  console.log('validatorOutstandingRewards', JSON.stringify(res.toObject(), undefined, 2));
-
-  res = await distribution.validatorCommission(validatorAddress);
-  console.log('validatorCommission', JSON.stringify(res.toObject(), undefined, 2));
-
   res = await distribution.delegationRewards(delegatorAddress, validatorAddress);
   console.log('delegationRewards', JSON.stringify(res.toObject(), undefined, 2));
-
-  res = await distribution.delegationTotalRewards(delegatorAddress);
-  console.log('delegationTotalRewards', JSON.stringify(res.toObject(), undefined, 2));
 };
 
 main();
