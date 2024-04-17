@@ -19,12 +19,12 @@ export const main = async () => {
     const staking = new ethers.Contract(stakingAddress, abi, wallet);
     const validatorAddress = '0xbf657d0ef7b48167657a703ed8fd063f075246d7';
     const amount = '30000000000000000000';
-    const creationHeight = '118';
+    const creationHeight = '428'; // 需要根据实际情况更新
     const tx = await staking.cancelUnbondingDelegation(validatorAddress, amount, creationHeight);
     await tx.wait();
 
     const res = await staking.delegation(wallet.address, validatorAddress);
-    console.log('delegation: ', JSON.stringify(res.toObject(), undefined, 2));
+    console.log('delegation: ', JSON.stringify(res.toObject(true), undefined, 2));
   } catch (error) {
     console.log('error', error);
   }

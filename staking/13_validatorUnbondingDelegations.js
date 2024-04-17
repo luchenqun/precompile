@@ -22,8 +22,12 @@ export const main = async () => {
   };
 
   const staking = new ethers.Contract(stakingAddress, abi, provider);
-  const res = await staking.validatorUnbondingDelegations(validatorAddr, pageRequest);
-  console.log('validatorUnbondingDelegations', JSON.stringify(res.toObject(), undefined, 2));
+
+  const [delegations, pageResponse] = await staking.validatorUnbondingDelegations(validatorAddr, pageRequest);
+  for (const delegation of delegations) {
+    console.log('delegation', delegation.toObject(true));
+  }
+  console.log('pageResponse:', pageResponse.toObject(true));
 };
 
 main();

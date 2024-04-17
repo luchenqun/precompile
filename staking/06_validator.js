@@ -16,7 +16,7 @@ export const main = async () => {
 
   const staking = new ethers.Contract(stakingAddress, abi, provider);
   const validator = await staking.validator(validatorAddress);
-  console.log('validator', JSON.stringify(validator.toObject(), undefined, 2));
+  console.log('validator', JSON.stringify(validator.toObject(true), undefined, 2));
 };
 
 main();

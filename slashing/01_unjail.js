@@ -8,7 +8,7 @@ export const main = async () => {
     const { abi } = await fs.readJSON(path.join(contracts, 'slashing/ISlashing.sol/ISlashing.json'));
     const provider = new ethers.JsonRpcProvider(rpc);
 
-    const privateKey = '95a13267a4fbde17cb12b6e66f89f6d99d3e34768d10b6c2bf1c1de4e0c60fe8';
+    const privateKey = '0bee24236f4f779ce87dbe2d005e7e16f9ea7020ed046c211823370606ed1ef0';
     const wallet = new ethers.Wallet(privateKey, provider);
 
     const slashing = new ethers.Contract(slashingAddress, abi, wallet);

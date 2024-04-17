@@ -17,7 +17,7 @@ export const main = async () => {
   const bank = new ethers.Contract(bankAddress, abi, provider);
 
   res = await bank.balance(address, denom);
-  console.log('balance', JSON.stringify(res.toObject(), undefined, 2));
+  console.log('balance', JSON.stringify(res.toObject(true), undefined, 2));
 };
 
 main();

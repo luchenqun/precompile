@@ -13,11 +13,12 @@ export const main = async () => {
 
   // input params
   const validatorAddress = '0xbf657d0ef7b48167657a703ed8fd063f075246d7';
-  let res;
   const distribution = new ethers.Contract(distributionAddress, abi, provider);
 
-  res = await distribution.validatorCommission(validatorAddress);
-  console.log('validatorCommission', JSON.stringify(res.toObject(), undefined, 2));
+  const rewards = await distribution.validatorCommission(validatorAddress);
+  for (const reward of rewards) {
+    console.log('validatorCommission', JSON.stringify(reward.toObject(true), undefined, 2));
+  }
 };
 
 main();

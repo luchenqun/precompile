@@ -12,11 +12,12 @@ export const main = async () => {
   const provider = new ethers.JsonRpcProvider(rpc);
 
   // input params
-  let res;
   const distribution = new ethers.Contract(distributionAddress, abi, provider);
 
-  res = await distribution.communityPool();
-  console.log('communityPool', JSON.stringify(res.toObject(), undefined, 2));
+  const rewards = await distribution.communityPool();
+  for (const reward of rewards) {
+    console.log('reward', JSON.stringify(reward.toObject(), undefined, 2));
+  }
 };
 
 main();

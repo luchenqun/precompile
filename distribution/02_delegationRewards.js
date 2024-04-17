@@ -14,11 +14,13 @@ export const main = async () => {
   // input params
   const validatorAddress = '0xbf657d0ef7b48167657a703ed8fd063f075246d7';
   const delegatorAddress = '0x00000Be6819f41400225702D32d3dd23663Dd690';
-  let res;
+
   const distribution = new ethers.Contract(distributionAddress, abi, provider);
 
-  res = await distribution.delegationRewards(delegatorAddress, validatorAddress);
-  console.log('delegationRewards', JSON.stringify(res.toObject(), undefined, 2));
+  const rewards = await distribution.delegationRewards(delegatorAddress, validatorAddress);
+  for (const reward of rewards) {
+    console.log('reward', JSON.stringify(reward.toObject(), undefined, 2));
+  }
 };
 
 main();

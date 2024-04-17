@@ -13,11 +13,15 @@ export const main = async () => {
 
   // input params
   const delegatorAddress = '0x00000Be6819f41400225702D32d3dd23663Dd690';
-  let res;
   const distribution = new ethers.Contract(distributionAddress, abi, provider);
 
-  res = await distribution.delegationTotalRewards(delegatorAddress);
-  console.log('delegationTotalRewards', JSON.stringify(res.toObject(), undefined, 2));
+  const [rewards, total] = await distribution.delegationTotalRewards(delegatorAddress);
+  for (const reward of rewards) {
+    console.log('reward', JSON.stringify(reward.toObject(true), undefined, 2));
+  }
+  for (const item of total) {
+    console.log('total', JSON.stringify(item.toObject(true), undefined, 2));
+  }
 };
 
 main();

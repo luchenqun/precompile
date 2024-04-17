@@ -7,7 +7,7 @@ BigInt.prototype.toJSON = function () {
 };
 
 export const main = async () => {
-  const { rpc, contracts, distributionAddress, denom } = await fs.readJSON('../cfg.json');
+  const { rpc, contracts, distributionAddress } = await fs.readJSON('../cfg.json');
   const { abi } = await fs.readJSON(path.join(contracts, 'distribution/IDistribution.sol/IDistribution.json'));
 
   const privateKey = 'f78a036930ce63791ea6ea20072986d8c3f16a6811f6a2583b0787c45086f769';

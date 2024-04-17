@@ -20,11 +20,12 @@ export const main = async () => {
     countTotal: true,
     reverse: false,
   };
-  let res;
+
   const bank = new ethers.Contract(bankAddress, abi, provider);
 
-  res = await bank.allBalances(address, pageRequest);
-  console.log('allBalances', JSON.stringify(res.toObject(), undefined, 2));
+  const [balances, pageResponse] = await bank.allBalances(address, pageRequest);
+  console.log('balances', JSON.stringify(balances.toObject(true), undefined, 2));
+  console.log('pageResponse', JSON.stringify(pageResponse.toObject(), undefined, 2));
 };
 
 main();

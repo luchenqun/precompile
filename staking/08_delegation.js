@@ -17,7 +17,7 @@ export const main = async () => {
 
   const staking = new ethers.Contract(stakingAddress, abi, provider);
   const res = await staking.delegation(delegatorAddr, validatorAddr);
-  console.log('delegation', JSON.stringify(res.toObject(), undefined, 2));
+  console.log('delegation', JSON.stringify(res.toObject(true), undefined, 2));
 };
 
 main();

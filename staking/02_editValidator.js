@@ -20,13 +20,13 @@ export const main = async () => {
 
     const staking = new ethers.Contract(stakingAddress, abi, wallet);
     validator = await staking.validator(validatorAddress);
-    console.log('validator before modify', validator);
+    console.log('validator before modify', validator.toObject(true));
 
     const tx = await staking.editValidator(description, commissionRate, minSelfDelegation);
     await tx.wait();
 
     validator = await staking.validator(validatorAddress);
-    console.log('validator after modify', validator);
+    console.log('validator after modify', validator.toObject(true));
   } catch (error) {
     console.log('error', error);
   }

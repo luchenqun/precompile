@@ -23,7 +23,7 @@ export const main = async () => {
     await tx.wait();
 
     const res = await staking.delegation(wallet.address, validatorAddress);
-    console.log('delegation: ', JSON.stringify(res.toObject(), undefined, 2));
+    console.log('delegation: ', JSON.stringify(res.toObject(true), undefined, 2));
   } catch (error) {
     console.log('error', error);
   }

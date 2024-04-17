@@ -20,10 +20,11 @@ export const main = async () => {
     const validatorAddress = '0xbf657d0ef7b48167657a703ed8fd063f075246d7';
     const amount = '30000000000000000000';
     const tx = await staking.undelegate(validatorAddress, amount);
-    await tx.wait();
+    const receipt = await tx.wait();
+    console.log('undelegate receipt', receipt);
 
     const res = await staking.delegation(wallet.address, validatorAddress);
-    console.log('delegation: ', JSON.stringify(res.toObject(), undefined, 2));
+    console.log('delegation: ', JSON.stringify(res.toObject(true), undefined, 2));
   } catch (error) {
     console.log('error', error);
   }

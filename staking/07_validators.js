@@ -18,8 +18,12 @@ export const main = async () => {
   };
 
   const staking = new ethers.Contract(stakingAddress, abi, provider);
-  const validators = await staking.validators(status, pageRequest);
-  console.log('validators', validators.toObject());
+  const [validators, pageResponse] = await staking.validators(status, pageRequest);
+  // console.log('validators', validators.toObject(true));
+  for (const validator of validators) {
+    console.log('validator', validator.toObject(true));
+  }
+  console.log('pageResponse:', pageResponse.toObject(true));
 };
 
 main();
