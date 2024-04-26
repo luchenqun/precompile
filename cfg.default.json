@@ -1,10 +1,6 @@
 {
   "rpc": "http://127.0.0.1:8545",
-  "contracts": "YOU_PATH/contracts",
-  "denom": "amud",
-  "bankAddress": "0x0000000000000000000000000000000000001000",
-  "govAddress": "0x0000000000000000000000000000000000001002",
-  "stakingAddress": "0x0000000000000000000000000000000000001003",
-  "distributionAddress": "0x0000000000000000000000000000000000001004",
-  "slashingAddress": "0x0000000000000000000000000000000000001005"
+  "contracts": "/Users/lcq/Code/ethos/precompile/contracts",
+  "denom": "aethos",
+  "stakingAddress": "0x0000000000000000000000000000000000001003"
 }

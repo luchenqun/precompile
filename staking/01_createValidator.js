@@ -9,12 +9,12 @@ export const main = async () => {
     const provider = new ethers.JsonRpcProvider(rpc);
 
     // input params
-    const privateKey = '54a2d3ac86cd0ce2c3af91a930d9a77199c658edf9af8341991e3622f2d9b521';
+    const privateKey = 'f78a036930ce63791ea6ea20072986d8c3f16a6811f6a2583b0787c45086f769';
     const wallet = new ethers.Wallet(privateKey, provider);
     const description = ['join node', 'identity', 'http://cosmos.lucq.fun', 'security contract', 'It is my details'];
     const commission = ['100000000000000000', '100000000000000000', '100000000000000000'];
     const minSelfDelegation = '1';
-    const pubkey = 'nb3QcA9Qth8q/Eoqr/SYHGAiW2U+eD+2iKrwMCF+vxw=';
+    const pubkey = 'MhQmCOl9XcZxaGz30xDwUaORJoObGh1j9VlIy1TNEC8=';
     const value = '100000000000000000000';
 
     const staking = new ethers.Contract(stakingAddress, abi, wallet);
