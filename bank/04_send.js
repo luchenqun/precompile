@@ -21,7 +21,7 @@ export const main = async () => {
     const amount = [
       {
         amount: '50000000000000000000',
-        denom,
+        denom: 'azkme',
       },
     ];
     const tx = await bank.send(address, amount);
