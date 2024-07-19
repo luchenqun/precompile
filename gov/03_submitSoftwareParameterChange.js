@@ -17,6 +17,23 @@ export const main = async () => {
   const gov = new ethers.Contract(govAddress, abi, wallet);
 
   const messages = [
+    // consensus params
+    {
+      '@type': '/cosmos.gov.v1.MsgExecLegacyContent',
+      authority: 'ethos10d07y265gmmuvt4z0w9aw880jnsr700j78lu59',
+      content: {
+        '@type': '/cosmos.params.v1beta1.ParameterChangeProposal',
+        title: 'Consensus Module Parameter Change: BlockParams.',
+        description: 'change block max_bytes from 22020096 to 30000000',
+        changes: [
+          {
+            subspace: 'baseapp',
+            key: 'BlockParams',
+            value: '{"max_bytes":"30000000","max_gas":"60000000"}',
+          },
+        ],
+      },
+    },
     // auth
     {
       '@type': '/cosmos.gov.v1.MsgExecLegacyContent',
@@ -109,12 +126,12 @@ export const main = async () => {
       content: {
         '@type': '/cosmos.params.v1beta1.ParameterChangeProposal',
         title: 'Parameter change: voting period.',
-        description: 'decrease voting period time to 10 minutes',
+        description: 'decrease voting period time to 18s',
         changes: [
           {
             subspace: 'gov',
             key: 'votingparams',
-            value: '{"voting_period":"600000000000"}',
+            value: '{"voting_period":"18000000000"}',
           },
         ],
       },
