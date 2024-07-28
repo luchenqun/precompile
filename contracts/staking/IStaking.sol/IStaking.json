@@ -615,6 +615,324 @@
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "delegatorAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "validatorAddr",
+          "type": "address"
+        }
+      ],
+      "name": "delegatorValidator",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "operatorAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "consensusPubkey",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "jailed",
+              "type": "bool"
+            },
+            {
+              "internalType": "enum BondStatus",
+              "name": "status",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokens",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "delegatorShares",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "string",
+                  "name": "moniker",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "identity",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "website",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "securityContact",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "details",
+                  "type": "string"
+                }
+              ],
+              "internalType": "struct Description",
+              "name": "description",
+              "type": "tuple"
+            },
+            {
+              "internalType": "int64",
+              "name": "unbondingHeight",
+              "type": "int64"
+            },
+            {
+              "internalType": "int64",
+              "name": "unbondingTime",
+              "type": "int64"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "rate",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxRate",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxChangeRate",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct CommissionRates",
+                  "name": "commissionRates",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "updateTime",
+                  "type": "int64"
+                }
+              ],
+              "internalType": "struct Commission",
+              "name": "commission",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256",
+              "name": "minSelfDelegation",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Validator",
+          "name": "validator",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "delegatorAddr",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "key",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "offset",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "limit",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bool",
+              "name": "countTotal",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "reverse",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct PageRequest",
+          "name": "pagination",
+          "type": "tuple"
+        }
+      ],
+      "name": "delegatorValidators",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "operatorAddress",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "consensusPubkey",
+              "type": "string"
+            },
+            {
+              "internalType": "bool",
+              "name": "jailed",
+              "type": "bool"
+            },
+            {
+              "internalType": "enum BondStatus",
+              "name": "status",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokens",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "delegatorShares",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "string",
+                  "name": "moniker",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "identity",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "website",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "securityContact",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "details",
+                  "type": "string"
+                }
+              ],
+              "internalType": "struct Description",
+              "name": "description",
+              "type": "tuple"
+            },
+            {
+              "internalType": "int64",
+              "name": "unbondingHeight",
+              "type": "int64"
+            },
+            {
+              "internalType": "int64",
+              "name": "unbondingTime",
+              "type": "int64"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "uint256",
+                      "name": "rate",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxRate",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "maxChangeRate",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct CommissionRates",
+                  "name": "commissionRates",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "updateTime",
+                  "type": "int64"
+                }
+              ],
+              "internalType": "struct Commission",
+              "name": "commission",
+              "type": "tuple"
+            },
+            {
+              "internalType": "uint256",
+              "name": "minSelfDelegation",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Validator[]",
+          "name": "validators",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "nextKey",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "total",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct PageResponse",
+          "name": "pageResponse",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "components": [
             {
               "internalType": "string",
@@ -671,6 +989,328 @@
     {
       "inputs": [
         {
+          "internalType": "int64",
+          "name": "height",
+          "type": "int64"
+        }
+      ],
+      "name": "historicalInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "uint64",
+                      "name": "block",
+                      "type": "uint64"
+                    },
+                    {
+                      "internalType": "uint64",
+                      "name": "app",
+                      "type": "uint64"
+                    }
+                  ],
+                  "internalType": "struct Consensus",
+                  "name": "version",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "string",
+                  "name": "chainId",
+                  "type": "string"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "height",
+                  "type": "int64"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "time",
+                  "type": "int64"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "string",
+                      "name": "hash",
+                      "type": "string"
+                    },
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint32",
+                          "name": "total",
+                          "type": "uint32"
+                        },
+                        {
+                          "internalType": "string",
+                          "name": "hash",
+                          "type": "string"
+                        }
+                      ],
+                      "internalType": "struct PartSetHeader",
+                      "name": "partSetHeader",
+                      "type": "tuple"
+                    }
+                  ],
+                  "internalType": "struct BlockID",
+                  "name": "lastBlockId",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "string",
+                  "name": "lastCommitHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "dataHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "validatorsHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "nextValidatorsHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "consensusHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "appHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "lastResultsHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "evidenceHash",
+                  "type": "string"
+                },
+                {
+                  "internalType": "string",
+                  "name": "proposerAddress",
+                  "type": "string"
+                }
+              ],
+              "internalType": "struct Header",
+              "name": "header",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "operatorAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "string",
+                  "name": "consensusPubkey",
+                  "type": "string"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "jailed",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "enum BondStatus",
+                  "name": "status",
+                  "type": "uint8"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "tokens",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "delegatorShares",
+                  "type": "uint256"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "string",
+                      "name": "moniker",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "identity",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "website",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "securityContact",
+                      "type": "string"
+                    },
+                    {
+                      "internalType": "string",
+                      "name": "details",
+                      "type": "string"
+                    }
+                  ],
+                  "internalType": "struct Description",
+                  "name": "description",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "unbondingHeight",
+                  "type": "int64"
+                },
+                {
+                  "internalType": "int64",
+                  "name": "unbondingTime",
+                  "type": "int64"
+                },
+                {
+                  "components": [
+                    {
+                      "components": [
+                        {
+                          "internalType": "uint256",
+                          "name": "rate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "maxRate",
+                          "type": "uint256"
+                        },
+                        {
+                          "internalType": "uint256",
+                          "name": "maxChangeRate",
+                          "type": "uint256"
+                        }
+                      ],
+                      "internalType": "struct CommissionRates",
+                      "name": "commissionRates",
+                      "type": "tuple"
+                    },
+                    {
+                      "internalType": "int64",
+                      "name": "updateTime",
+                      "type": "int64"
+                    }
+                  ],
+                  "internalType": "struct Commission",
+                  "name": "commission",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "minSelfDelegation",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Validator[]",
+              "name": "valset",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct HistoricalInfo",
+          "name": "historicalInfo",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "params",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "int64",
+              "name": "unbondingTime",
+              "type": "int64"
+            },
+            {
+              "internalType": "uint32",
+              "name": "maxValidators",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "maxEntries",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "historicalEntries",
+              "type": "uint32"
+            },
+            {
+              "internalType": "string",
+              "name": "bondDenom",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "minCommissionRate",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Params",
+          "name": "params",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pool",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "notBondedTokens",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "bondedTokens",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Pool",
+          "name": "pool",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "internalType": "address",
           "name": "validatorSrcAddress",
           "type": "address"
@@ -695,6 +1335,174 @@
         }
       ],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "delegatorAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "srcValidatorAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "dstValidatorAddr",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "key",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "offset",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "limit",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bool",
+              "name": "countTotal",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "reverse",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct PageRequest",
+          "name": "pagination",
+          "type": "tuple"
+        }
+      ],
+      "name": "redelegations",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "delegatorAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "validatorSrcAddress",
+                  "type": "address"
+                },
+                {
+                  "internalType": "address",
+                  "name": "validatorDstAddress",
+                  "type": "address"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "int64",
+                      "name": "creationHeight",
+                      "type": "int64"
+                    },
+                    {
+                      "internalType": "int64",
+                      "name": "completionTime",
+                      "type": "int64"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "initialBalance",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shareDst",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct RedelegationEntry[]",
+                  "name": "entries",
+                  "type": "tuple[]"
+                }
+              ],
+              "internalType": "struct Redelegation",
+              "name": "redelegation",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "components": [
+                    {
+                      "internalType": "int64",
+                      "name": "creationHeight",
+                      "type": "int64"
+                    },
+                    {
+                      "internalType": "int64",
+                      "name": "completionTime",
+                      "type": "int64"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "initialBalance",
+                      "type": "uint256"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "shareDst",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct RedelegationEntry",
+                  "name": "redelegationEntry",
+                  "type": "tuple"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "balance",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct RedelegationEntryResponse[]",
+              "name": "entries",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct RedelegationResponse[]",
+          "name": "redelegationResponses",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "nextKey",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "total",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct PageResponse",
+          "name": "pageResponse",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {

@@ -229,6 +229,44 @@
     {
       "inputs": [
         {
+          "internalType": "address",
+          "name": "delegatorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "delegatorValidators",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "validators",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "delegatorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "delegatorWithdrawAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "withdrawAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
           "components": [
             {
               "internalType": "string",
@@ -255,6 +293,41 @@
         }
       ],
       "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "params",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "communityTax",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseProposerReward",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "bonusProposerReward",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bool",
+              "name": "withdrawAddrEnabled",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct Params",
+          "name": "params",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -406,6 +479,96 @@
           "internalType": "struct DecCoin[]",
           "name": "rewards",
           "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "validatorAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint64",
+          "name": "startingHeight",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint64",
+          "name": "endingHeight",
+          "type": "uint64"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "key",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "offset",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "limit",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bool",
+              "name": "countTotal",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "reverse",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct PageRequest",
+          "name": "pagination",
+          "type": "tuple"
+        }
+      ],
+      "name": "validatorSlashes",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint64",
+              "name": "validatorPeriod",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint256",
+              "name": "fraction",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ValidatorSlashEvent[]",
+          "name": "validatorSlashEvents",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "nextKey",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "total",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct PageResponse",
+          "name": "pageResponse",
+          "type": "tuple"
         }
       ],
       "stateMutability": "view",
