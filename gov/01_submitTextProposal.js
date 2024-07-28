@@ -21,7 +21,7 @@ export const main = async () => {
   const initialDeposit = [
     {
       denom,
-      amount: '10000000',
+      amount: '100',
     },
   ];
 

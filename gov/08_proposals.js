@@ -26,7 +26,8 @@ export const main = async () => {
 
   const [proposals, pageResponse] = await gov.proposals(status, voter, depositor, pageRequest);
   for (const proposal of proposals) {
-    console.log('proposal', JSON.stringify(proposal.toObject(), undefined, 2));
+    console.log('proposal', JSON.stringify(proposal.toObject(true), undefined, 2));
+    // console.log(JSON.parse(proposal.toObject(true).messages['_']));
   }
   console.log('pageResponse:', pageResponse.toObject(true));
 };

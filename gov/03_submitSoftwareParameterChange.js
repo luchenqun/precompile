@@ -208,7 +208,6 @@ export const main = async () => {
     console.log(`vote proposal success, blockNumber: ${receipt.blockNumber}, blockHash: ${receipt.blockHash}`);
 
     proposalId++;
-    break;
   }
 };
 
