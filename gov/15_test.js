@@ -6,6 +6,10 @@ BigInt.prototype.toJSON = function () {
   return this.toString();
 };
 
+const sleep = (time) => {
+  return new Promise((resolve) => setTimeout(resolve, time));
+};
+
 export const main = async () => {
   const { rpc, contracts, govAddress, denom } = await fs.readJSON('../cfg.json');
   const { abi } = await fs.readJSON(path.join(contracts, 'gov/IGov.sol/IGov.json'));
@@ -48,6 +52,9 @@ export const main = async () => {
     console.log('legacy submit proposal success, receipt: ', receipt);
   }
 
+  console.log('wait 6s to vote the proposal');
+  await sleep('6000');
+
   {
     const status = 0;
     const voter = '0x0000000000000000000000000000000000000000';
@@ -57,11 +64,12 @@ export const main = async () => {
       offset: 0,
       limit: 100,
       countTotal: true,
-      reverse: false,
+      reverse: true,
     };
 
     const [_, pageResponse] = await gov.proposals(status, voter, depositor, pageRequest);
     const proposalId = pageResponse.toObject(true).total.toString();
+    console.log('proposalId = ', proposalId);
 
     const options = [
       { option: 1, weight: '0.6' },
