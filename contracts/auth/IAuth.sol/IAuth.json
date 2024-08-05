@@ -1,0 +1,292 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IAuth",
+  "sourceName": "contracts/auth/IAuth.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "name": "account",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "pubKey",
+              "type": "string"
+            },
+            {
+              "internalType": "uint64",
+              "name": "accountNumber",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sequence",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct Account",
+          "name": "account",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int64",
+          "name": "id",
+          "type": "int64"
+        }
+      ],
+      "name": "accountAddressByID",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "addr",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "key",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "offset",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "limit",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bool",
+              "name": "countTotal",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "reverse",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct PageRequest",
+          "name": "pageRequest",
+          "type": "tuple"
+        }
+      ],
+      "name": "accounts",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "pubKey",
+              "type": "string"
+            },
+            {
+              "internalType": "uint64",
+              "name": "accountNumber",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sequence",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct Account[]",
+          "name": "accounts",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "nextKey",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "total",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct PageResponse",
+          "name": "pageResponse",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "moduleAccountByName",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "pubKey",
+              "type": "string"
+            },
+            {
+              "internalType": "uint64",
+              "name": "accountNumber",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sequence",
+              "type": "uint64"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string[]",
+              "name": "permissions",
+              "type": "string[]"
+            }
+          ],
+          "internalType": "struct ModuleAccount",
+          "name": "moduleAccount",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "moduleAccounts",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "addr",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "pubKey",
+              "type": "string"
+            },
+            {
+              "internalType": "uint64",
+              "name": "accountNumber",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sequence",
+              "type": "uint64"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "internalType": "string[]",
+              "name": "permissions",
+              "type": "string[]"
+            }
+          ],
+          "internalType": "struct ModuleAccount[]",
+          "name": "moduleAccounts",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "params",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint64",
+              "name": "maxMemoCharacters",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "txSigLimit",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "txSizeCostPerByte",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sigVerifyCostEd25519",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "sigVerifyCostSecp256k1",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct Params",
+          "name": "params",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
