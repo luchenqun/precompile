@@ -1,0 +1,111 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IFeemarket",
+  "sourceName": "contracts/feemarket/IFeemarket.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "baseFee",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "baseFee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "blockGas",
+      "outputs": [
+        {
+          "internalType": "int64",
+          "name": "blockGas",
+          "type": "int64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "params",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bool",
+              "name": "noBaseFee",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint32",
+              "name": "baseFeeChangeDenominator",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "elasticityMultiplier",
+              "type": "uint32"
+            },
+            {
+              "internalType": "int64",
+              "name": "enableHeight",
+              "type": "int64"
+            },
+            {
+              "internalType": "uint256",
+              "name": "baseFee",
+              "type": "uint256"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "precision",
+                  "type": "uint8"
+                }
+              ],
+              "internalType": "struct Dec",
+              "name": "minGasPrice",
+              "type": "tuple"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "uint8",
+                  "name": "precision",
+                  "type": "uint8"
+                }
+              ],
+              "internalType": "struct Dec",
+              "name": "minGasMultiplier",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Params",
+          "name": "params",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

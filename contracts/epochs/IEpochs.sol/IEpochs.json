@@ -1,0 +1,130 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IEpochs",
+  "sourceName": "contracts/epochs/IEpochs.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "identifier",
+          "type": "string"
+        }
+      ],
+      "name": "currentEpoch",
+      "outputs": [
+        {
+          "internalType": "int64",
+          "name": "currentEpoch",
+          "type": "int64"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "key",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "offset",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint64",
+              "name": "limit",
+              "type": "uint64"
+            },
+            {
+              "internalType": "bool",
+              "name": "countTotal",
+              "type": "bool"
+            },
+            {
+              "internalType": "bool",
+              "name": "reverse",
+              "type": "bool"
+            }
+          ],
+          "internalType": "struct PageRequest",
+          "name": "pagination",
+          "type": "tuple"
+        }
+      ],
+      "name": "epochInfos",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "string",
+              "name": "identifier",
+              "type": "string"
+            },
+            {
+              "internalType": "int64",
+              "name": "startTime",
+              "type": "int64"
+            },
+            {
+              "internalType": "int64",
+              "name": "duration",
+              "type": "int64"
+            },
+            {
+              "internalType": "int64",
+              "name": "currentEpoch",
+              "type": "int64"
+            },
+            {
+              "internalType": "int64",
+              "name": "currentEpochStartTime",
+              "type": "int64"
+            },
+            {
+              "internalType": "bool",
+              "name": "epochCountingStarted",
+              "type": "bool"
+            },
+            {
+              "internalType": "int64",
+              "name": "currentEpochStartHeight",
+              "type": "int64"
+            }
+          ],
+          "internalType": "struct EpochInfo[]",
+          "name": "epochs",
+          "type": "tuple[]"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes",
+              "name": "nextKey",
+              "type": "bytes"
+            },
+            {
+              "internalType": "uint64",
+              "name": "total",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct PageResponse",
+          "name": "pageResponse",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
